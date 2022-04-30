@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ title }} :: {{ block.super }}{% endblock %}
+
+{% block content %}
+
+<div id="main">
+    <div id="content">
+      <div class="box">
+        <div class="head">
+          <h1>Фильмы Онлайн</h1>
+          <!-- <p class="text-right"><a href="#">See all</a></p> -->
+        </div>
+        {% for post in posts %}
+        <div class="movie">
+          <div class="movie-image"> <span class="play"><a href='{{ post.get_absolute_url }}'>{{ post.title }}</a><span class="name">{{ post.title.url }}</span></span> <a href="#">
+            
+            <img src="{{ post.logo.url }}" alt="" /></a> </div>
+          <div class="rating">
+            <h4>{{ post.title }}</h4>
+            <span class="comments"></span> </div>
+        </div>
+        {% endfor %}
+        <div class="cl">&nbsp;</div>
+      </div>
+    </div>
+
+    <div class="cl">&nbsp;</div>
+  </div>
+
+{% endblock %}
