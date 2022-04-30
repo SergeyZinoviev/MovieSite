@@ -79,16 +79,16 @@ class Post(models.Model):
     views = models.IntegerField(default=0, verbose_name='Количество просмотров')
     category = models.ForeignKey(Category, on_delete=models.PROTECT, related_name='movies', verbose_name='Категория')
     # tags = models.ManyToManyField(Tag, blank=True, related_name='posts')
-    released = models.CharField(default='None', max_length=15, verbose_name='Год выхода')
-    director = models.CharField(default='None', max_length=50, verbose_name='Режиссер')
-    side = models.CharField(default='None', max_length=50, verbose_name='Страна', blank=True, null=True)
-    actors = models.CharField(default='None', max_length=5000, verbose_name='Актеры', blank=True, null=True)
-    genre = models.CharField(default='None', max_length=3000, verbose_name='Жанр', blank=True, null=True)
-    translation = models.CharField(default='None', max_length=3000, verbose_name='Перевод')
-    quality = models.ForeignKey(Quality, default='None', on_delete=models.PROTECT, related_name='movies',
-                                verbose_name='Качество')
-    rateKP = models.CharField(default='None', max_length=3000, verbose_name='Рейтинг КП')
-    rateIMDB = models.CharField(default='None', max_length=3000, verbose_name='Рейтинг IMDB')
+    released = models.CharField(max_length=15, verbose_name='Год выхода', blank=True)
+    director = models.CharField(max_length=50, verbose_name='Режиссер', blank=True)
+    side = models.CharField(max_length=50, verbose_name='Страна', null=True, blank=True)
+    actors = models.CharField(max_length=5000, verbose_name='Актеры', null=True, blank=True)
+    genre = models.CharField(max_length=3000, verbose_name='Жанр', null=True, blank=True)
+    translation = models.CharField(max_length=3000, verbose_name='Перевод', null=True, blank=True)
+    quality = models.ForeignKey(Quality, on_delete=models.PROTECT, related_name='movies',
+                                verbose_name='Качество', blank=True)
+    rateKP = models.CharField(max_length=3000, verbose_name='Рейтинг КП', null=True, blank=True)
+    rateIMDB = models.CharField(max_length=3000, verbose_name='Рейтинг IMDB', null=True, blank=True)
 
     def __str__(self):
         return self.title

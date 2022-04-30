@@ -79,9 +79,12 @@ h1#logo {
 	top:37px;
 	left:0;
 }
+#single_img{
+    width: 20%;
+}
 #piccol {
     vertical-align: top; /* Выравнивание по верхнему краю */
-    padding: 5px; /* Поля вокруг содержимого ячеек */
+    padding: 50px; /* Поля вокруг содержимого ячеек */
    }
 #textcol {
     vertical-align: top; /* Выравнивание по верхнему краю */
