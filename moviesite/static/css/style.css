@@ -79,10 +79,14 @@ h1#logo {
 	top:37px;
 	left:0;
 }
-table#piccol, #textcol {
+#piccol {
     vertical-align: top; /* Выравнивание по верхнему краю */
     padding: 5px; /* Поля вокруг содержимого ячеек */
    }
+#textcol {
+    vertical-align: top; /* Выравнивание по верхнему краю */
+    width: 80%;
+    padding: 15px; /* Поля вокруг содержимого ячеек */
 h1#logo a {
 	float:left;
 	width:239px;

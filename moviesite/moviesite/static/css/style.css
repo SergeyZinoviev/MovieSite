@@ -234,8 +234,12 @@ h1#logo a {
 }
 .box .movie {
 	width:152px;
-	float:right;
+	/*генерирует flex-контейнер уровня строки*/
+    flex-wrap: wrap;
+    display: inline-flex;
+	vertical-align:top;
 	padding-right:40px;
+	padding-top:10px;
 }
 .movie-image {
 	float:left;
