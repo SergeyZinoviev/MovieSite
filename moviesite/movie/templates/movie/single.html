@@ -10,17 +10,29 @@
         <div class="head">
           <h1>{{ post.title }}</h1>
 
-            <table>
-            <tbody>
-            <tr>
-            <td id="piccol"><img id="single_img" src="{{ post.logo.url }}" alt="" /></a></td>
-            <td id="textcol"><h3>{{ post.content }}</h3></td>
-            </tr>
-            </tbody>
-            </table>
-          <!-- <div class="fotocons">
-            <img src="{{ post.logo.url }}" alt="" /></a> </div>
-          </div> -->
+
+          <table class="iksweb">
+              <tbody>
+                  <tr>
+                      <td rowspan="2" id="piccol"><img src="{{ post.logo.url }}" alt="" /></td>
+                      <td><h3>{{ post.content }}</h3></td>
+                  </tr>
+                  <tr id="textcol">
+                      <td>
+                          <h3>Год выхода: {{ post.released }}</h3>
+                          <h3>Режиссер: {{ post.director }}</h3>
+                          <h3>Страна: {{ post.side }}</h3>
+                          <h3>Актеры: {{ post.actors }}</h3>
+                          <h3>Жанр: {{ post.genre }}</h3>
+
+                          <h3>Рейтинг Кинопоиск: {{ post.rateKP }}</h3>
+                          <h3>Рейтинг IMDB: {{ post.rateIMDB }}</h3>
+                          <h3>Перевод: {{ post.translation }}</h3>
+                          <h3>Качество: {{ post.quality }}</h3>
+                  </tr>
+              </tbody>
+          </table>
+
 
           <div class="tabs-b video-box visible">
             <h1 align="center">Смотреть {{ post.title }} в HD 720-1080 хорошем качестве</h1>

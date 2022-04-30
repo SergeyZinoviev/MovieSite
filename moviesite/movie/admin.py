@@ -6,7 +6,7 @@ from .models import *
 class PostAdmin(admin.ModelAdmin):
     save_as = True
     save_on_top = True
-    list_display = ('id', 'title', 'get_photo', 'category', 'data_ad', 'urlmov', 'views', 'slug','released', 'director', 'side', 'actors', 'genre', 'translation', 'quality', 'rateKP', 'rateIMDB')
+    list_display = ('id', 'title', 'get_photo', 'category', 'data_ad', 'urlmov', 'views', 'slug', 'released', 'director', 'side', 'actors', 'genre', 'translation', 'quality', 'rateKP', 'rateIMDB')
     list_display_links = ('id', 'title')
     search_fields = ('title',)
     list_filter = ('category',)

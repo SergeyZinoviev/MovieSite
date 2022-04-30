@@ -84,12 +84,17 @@ h1#logo {
 }
 #piccol {
     vertical-align: top; /* Выравнивание по верхнему краю */
-    padding: 50px; /* Поля вокруг содержимого ячеек */
+    padding: 100px; /* Поля вокруг содержимого ячеек */
    }
 #textcol {
     vertical-align: top; /* Выравнивание по верхнему краю */
-    width: 80%;
-    padding: 15px; /* Поля вокруг содержимого ячеек */
+    width: 100%;
+
+    padding: 5px; /* Поля вокруг содержимого ячеек */
+}
+.iksweb h4{
+    color:#fff;
+}
 h1#logo a {
 	float:left;
 	width:239px;
