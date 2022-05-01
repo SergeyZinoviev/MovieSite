@@ -19,16 +19,31 @@
                   </tr>
                   <tr id="textcol">
                       <td>
-                          <h3>Год выхода: {{ post.released }}</h3>
-                          <h3>Режиссер: {{ post.director }}</h3>
-                          <h3>Страна: {{ post.side }}</h3>
-                          <h3>Актеры: {{ post.actors }}</h3>
-                          <h3>Жанр: {{ post.genre }}</h3>
-
-                          <h3>Рейтинг Кинопоиск: {{ post.rateKP }}</h3>
-                          <h3>Рейтинг IMDB: {{ post.rateIMDB }}</h3>
-                          <h3>Перевод: {{ post.translation }}</h3>
-                          <h3>Качество: {{ post.quality }}</h3>
+                          <h3><i><font color="#fa8e47">Год выхода:</font></i> {{ post.released }}</h3>
+                          {% if post.director %}
+                          <h3><i><font color="#fa8e47">Режиссер:</font></i> {{ post.director }}</h3>
+                          {% endif %}
+                          {% if post.side %}
+                          <h3><i><font color="#fa8e47">Страна:</font></i> {{ post.side }}</h3>
+                          {% endif %}
+                          {% if post.actors %}
+                          <h3><i><font color="#fa8e47">Актеры:</font></i> {{ post.actors }}</h3>
+                          {% endif %}
+                          {% if post.genre %}
+                          <h3><i><font color="#fa8e47">Жанр:</font></i> {{ post.genre }}</h3>
+                          {% endif %}
+                          {% if post.rateKP %}
+                          <h3><i><font color="#fa8e47">Рейтинг Кинопоиск:</font></i> {{ post.rateKP }}</h3>
+                          {% endif %}
+                          {% if post.rateIMDB %}
+                            <h3><i><font color="#fa8e47">Рейтинг IMDB:</font></i> {{ post.rateIMDB }}</h3>
+                          {% endif %}
+                          {% if post.translation %}
+                          <h3><i><font color="#fa8e47">Перевод:</font></i> {{ post.translation }}</h3>
+                          {% endif %}
+                          {% if post.quality %}
+                          <h3><i><font color="#fa8e47">Качество:</font></i> {{ post.quality }}</h3>
+                          {% endif %}
                   </tr>
               </tbody>
           </table>
