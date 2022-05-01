@@ -54,6 +54,7 @@ class Search(ListView):
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(**kwargs)
+        context['s'] = f"s={self.request.GET.get('s')}"
         return context
 
 # def index(request):
