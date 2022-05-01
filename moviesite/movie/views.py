@@ -17,7 +17,7 @@ class Home(ListView):
 
 
 class PostsByCategory(ListView):
-    template_name = 'movie/index.html'
+    template_name = 'movie/category.html'
     context_object_name = 'posts'    
     paginate_by = 50
     allow_empty = False

@@ -8,7 +8,7 @@
     <div id="content">
       <div class="box">
         <div class="head">
-          <h1>Фильмы Онлайн</h1>
+          <h1>{{ title }}</h1>
           <!-- <p class="text-right"><a href="#">See all</a></p> -->
         </div>
         {% for post in posts %}
@@ -24,6 +24,26 @@
         <div class="cl">&nbsp;</div>
       </div>
     </div>
+
+    <!-- {% if page_obj.has_other_pages %}
+    <div class="pagination">
+      <div class="nav-links">
+
+        {% for p in page_obj.paginator.page_range %}
+            {% if page_obj.numbers == p %}
+            <span class="page-numbers current">{{ p }}</span>
+            {% else %}
+            <a class="page-numbers" href="?page={{ p }}">{{ p }}</a>
+            {% endif %}
+        {% endfor %}
+
+        <span class="page-numbers current">1</span>
+        <a class="page-numbers" href="#">2</a>
+        <a class="page-numbers" href="#"><i class="fa fa-angle-right"></i></a>
+
+      </div>
+    </div>
+    {% endif %} -->
 
     <div class="cl">&nbsp;</div>
   </div>
