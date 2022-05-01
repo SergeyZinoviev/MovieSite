@@ -15,6 +15,7 @@ class Home(ListView):
         context['title'] = 'Фильм'
         return context
 
+
 class PostsByCategory(ListView):
     template_name = 'movie/index.html'
     context_object_name = 'posts'    
@@ -29,6 +30,7 @@ class PostsByCategory(ListView):
         context['title'] = Category.objects.get(slug=self.kwargs['slug'])
         return context    
 
+
 class GetPost(DetailView):
     model = Post
     template_name = 'movie/single.html'
@@ -40,12 +42,27 @@ class GetPost(DetailView):
         self.object.save()
         self.object.refresh_from_db()
         return context 
-        
+
+
+class Search(ListView):
+    template_name = 'movie/search.html'
+    context_object_name = 'posts'
+    paginate_by = 1
+
+    def get_queryset(self):
+        return Post.objects.filter(title__icontains=self.request.GET.get('s'))
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super().get_context_data(**kwargs)
+        return context
+
 # def index(request):
 #     return render(request, 'movie/index.html')
 
+
 def news(request):
     return render(request, 'movie/news.html')
+
 
 def comsoon(request):
     return render(request, 'movie/comsoon.html')
