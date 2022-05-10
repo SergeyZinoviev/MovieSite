@@ -20,6 +20,15 @@ class PostAdmin(admin.ModelAdmin):
     get_photo.short_description = 'Фото'
 
 
+class CommentAdmin(admin.ModelAdmin):
+    list_display = ('name', 'movie', 'pub_date')
+    list_filter = ('movie', 'pub_date')
+    search_fields = ('name', 'movie', 'text')
+
+
+admin.site.register(Reviews, CommentAdmin)
+
+
 admin.site.register(Post, PostAdmin)
 admin.site.register(Quality)
 

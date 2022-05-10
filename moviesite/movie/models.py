@@ -100,3 +100,22 @@ class Post(models.Model):
         verbose_name = 'Пост'
         verbose_name_plural = 'Посты'
         ordering = ['-data_ad']
+
+
+class Reviews(models.Model):
+    """Отзывы"""
+    name = models.CharField("Имя", max_length=100)
+    text = models.TextField("Сообщение", max_length=5000)
+    parent = models.ForeignKey(
+        'self', verbose_name="Родитель", on_delete=models.SET_NULL, blank=True, null=True
+    )
+    movie = models.ForeignKey(Post, verbose_name="фильм", on_delete=models.CASCADE)
+    pub_date = models.DateTimeField(auto_now_add=True, verbose_name='Опубликовано')
+
+    def __str__(self):
+        return f"{self.name} - {self.movie}"
+
+    class Meta:
+        verbose_name = "Отзыв"
+        verbose_name_plural = "Отзывы"
+        ordering = ['-pub_date']

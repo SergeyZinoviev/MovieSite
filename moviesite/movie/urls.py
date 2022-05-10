@@ -9,4 +9,5 @@ urlpatterns = [
     path('/<str:slug>/', GetPost.as_view(), name='post'),
     path('category/<str:slug>/', PostsByCategory.as_view(), name='category'),
     path('search/', Search.as_view(), name='search'),
+    path("review/<int:pk>/", AddReview.as_view(), name="add_review"),
 ]

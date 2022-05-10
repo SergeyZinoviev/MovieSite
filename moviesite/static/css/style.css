@@ -86,6 +86,7 @@ h1#logo {
     vertical-align: top; /* Выравнивание по верхнему краю */
     padding: 100px; /* Поля вокруг содержимого ячеек */
    }
+
 #textcol {
     vertical-align: top; /* Выравнивание по верхнему краю */
     width: 100%;

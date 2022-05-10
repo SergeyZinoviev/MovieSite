@@ -1,8 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.generic import ListView, DetailView
 from .models import *
 from django.db.models import F
-
+from django.views.generic.base import View
+from .forms import ReviewForm
 
 class Home(ListView):
     model = Post
@@ -56,6 +57,18 @@ class Search(ListView):
         context = super().get_context_data(**kwargs)
         #context['s'] = f"s={self.request.GET.get('s')}"
         return context
+
+
+class AddReview(View):
+    """Отзывы"""
+    def post(self, request, pk):
+        form = ReviewForm(request.POST)
+        movie = Post.objects.get(id=pk)
+        if form.is_valid():
+            form = form.save(commit=False)
+            form.movie = movie
+            form.save()
+        return redirect(movie.get_absolute_url())
 
 
 def news(request):
