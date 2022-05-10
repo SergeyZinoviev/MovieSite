@@ -87,6 +87,10 @@ h1#logo {
     padding: 100px; /* Поля вокруг содержимого ячеек */
    }
 
+td#formrev {
+    padding-right:40px;
+	padding-top:10px;
+}
 #textcol {
     vertical-align: top; /* Выравнивание по верхнему краю */
     width: 100%;
